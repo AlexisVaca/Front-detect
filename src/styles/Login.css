@@ -1,0 +1,119 @@
+/* Estilos base para asegurar que la página de login ocupe toda la pantalla */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw; /* Asegura que ocupe todo el ancho de la pantalla */
+    background-image: url('https://scontent.fuio7-1.fna.fbcdn.net/v/t1.6435-9/40778379_2155568727849003_8978027145376825344_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGUjZrBw_9oTF71symL28t99u7BgS9ZlvL27sGBL1mW8k8Lx6LCwZG4HxfrOWy7ydRzxztC2AN2c3RpQo95H3Lc&_nc_ohc=2ZZVYDpko2wQ7kNvgGyVkEh&_nc_ht=scontent.fuio7-1.fna&oh=00_AYAXCzjKfl_2wvDQ32xZJvFIl92nXSEhisAOX4zgzZlRcA&oe=66AED552');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 90%; /* Ancho máximo */
+    max-width: 400px; /* Limitar el ancho máximo */
+    margin: 20px;
+}
+
+.welcome-banner {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome-banner h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.welcome-banner p {
+    font-size: 16px;
+    color: #555;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-container {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-button{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #008000b3;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.register-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #008057b3;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-button:hover,
+.register-button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: rgb(206, 19, 19);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .content-container {
+        width: 80%; /* Ajustar el ancho en pantallas pequeñas */
+    }
+
+    .welcome-banner {
+        display: none; /* Oculta el mensaje de bienvenida en pantallas pequeñas */
+    }
+}

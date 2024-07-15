@@ -1,0 +1,114 @@
+/* Estilos para la página de registro */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://scontent.fuio7-1.fna.fbcdn.net/v/t31.18172-8/12309933_912461055494835_3861793578127944852_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=b895b5&_nc_eui2=AeF92181nkz29LddxSBnmnUROhUM7hKf3Ds6FQzuEp_cO0HJXV8HyTkKSFq-PCCGOX4u8ZG4MCtQ3VZVd2klAMLK&_nc_ohc=0ShZe5wpP1sQ7kNvgHJNEQ7&_nc_ht=scontent.fuio7-1.fna&oh=00_AYDgyBZk88hs6z6YI5SH4mHsTaPI8Yze4bOWSZkPeWPmAA&oe=66BC1540');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f0f0; /* Color de fondo */
+}
+
+.registration-form-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transiciones de transformación y opacidad */
+  transform: translateY(20px); /* Desplazamiento inicial */
+}
+
+.success-container {
+  background-color: #d4edda; /* Color de fondo para mensajes de éxito */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.registration-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%; /* Ancho completo del input */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Incluir padding y border en el ancho total */
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.submit-button,
+.back-button {
+  background-color: #008000b3; /* Verde con 70% de opacidad */
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.back-button {
+  width: 100%;
+  background-color: #008057b3; /* Azul oscuro */
+}
+
+.submit-button:hover,
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+.input-container {
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Mostrar la página de registro */
+.register-container.active {
+  opacity: 1;
+}
+
+.registration-form-container.active {
+  transform: translateY(0);
+}

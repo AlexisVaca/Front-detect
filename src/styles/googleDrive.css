@@ -1,0 +1,166 @@
+/* Estilos específicos para la página de subida de archivos */
+.upload-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: linear-gradient(to bottom right,#37a582b3,40%, #66d666b3); 
+}
+
+.file-upload-container {
+  max-width: 800px;
+  margin: 10px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.file-upload-area {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.file-upload-area.dragging {
+  border-color: #00cc00;
+  background-color: #e6ffe6;
+}
+
+.upload-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.upload-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.upload-button:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.cancel-button:disabled {
+  background-color: #ef9a9a;
+  cursor: not-allowed;
+}
+
+.file-upload-container {
+  margin-bottom: 20px; /* Espacio inferior para separar otros elementos */
+}
+
+/* Estilos para el input file */
+.file-upload {
+  border: 2px solid #ccc; /* Borde gris */
+  padding: 10px; /* Espaciado interno */
+  cursor: pointer; /* Cambia el cursor al pasar sobre él */
+  width: 200px; /* Ancho del input */
+  display: inline-block; /* Permite alinear elementos en línea */
+}
+
+/* Estilos para el texto del input file */
+.file-upload-text {
+  font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilo para ocultar el input file */
+.file-upload[type="file"] {
+  display: none;
+}
+
+.selected-files {
+  margin-top: 20px;
+}
+
+.selected-files ul {
+  list-style: none;
+  padding: 0;
+}
+
+.detection-results {
+  margin-top: 20px;
+}
+
+.detection-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  margin: 0 auto; /* Centra el contenedor en la página */
+  max-width: 1200px;
+}
+
+.detection-item {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.detection-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.species-container {
+  position: relative;
+  display: inline-block;
+}
+
+.species-image {
+  max-width: 200px;
+  max-height: 200px;
+  margin-bottom: 10px;
+}
+
+.bounding-box {
+  position: absolute;
+  border: 2px solid red;
+  box-sizing: border-box;
+}
+
+.progress-container {
+  margin-top: 20px;
+}
+
+.file-upload-progress {
+  width: 100%;
+  height: 30px; /* Aumenta la altura de la barra de progreso */
+}
+
+.file-upload-progress-container {
+  margin-top: 20px;
+}
+
+.detection-results-scrollable {
+  max-height: 400px; /* Altura máxima para la lista de resultados */
+  overflow-y: auto; /* Añadir barra de desplazamiento vertical cuando sea necesario */
+}
