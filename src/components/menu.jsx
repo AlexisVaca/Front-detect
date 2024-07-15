@@ -30,7 +30,7 @@ const Menu = () => {
     <nav className="menu-container">
       <ul className="menu-list">
         <li className="menu-item">
-          <Link to="/" className="menu-link">
+          <Link to="/home" className="menu-link">
             Inicio
           </Link>
         </li>

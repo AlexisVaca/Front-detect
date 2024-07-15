@@ -8,6 +8,7 @@ import PrivateRoutes from './components/PrivateRoutes';
 import Logout from './components/Logout';
 import Register from './components/Register';
 import EspecieDetail from './pages/Especie'; // Asumiendo que este es tu componente de detalle de especie
+import Home from './pages/Home';
 import 'leaflet/dist/leaflet.css';
 
 function App(){
@@ -16,6 +17,7 @@ function App(){
         <Router>
           <Routes>
             <Route exact path='/' Component={Login}/>
+            <Route exact path='/home' Component={Home}/>            
             <Route path='/register' Component={Register}/>
             <Route element={<PrivateRoutes/>}>
               <Route element={<Dashboard/>} path='dashboard' />

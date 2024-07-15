@@ -113,8 +113,6 @@ const EspecieDetail = () => {
 
         <h3>Gráfico de Avistamientos Mensuales</h3>
         <canvas ref={chartRef} id="myChart" width="400" height="200"></canvas>
-
-        <Link to="/logout" className="link-logout">Cerrar Sesión</Link>
       </div>
     </div>
   );
