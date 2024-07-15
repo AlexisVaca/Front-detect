@@ -1,0 +1,44 @@
+/* Statistics.css */
+
+.stats-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stats-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .chart-container {
+    margin-bottom: 20px;
+  }
+  
+  #myChart {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logout-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .logout-link:hover {
+    text-decoration: underline;
+  }
+  
+  .map-container {
+    margin: 20px 0;
+    height: 400px;
+    width: 100%;
+  }

@@ -22,6 +22,13 @@ const Login = () => {
             // Guarda el token en localStorage
             localStorage.setItem('token', token);
 
+            // Decodifica el token para obtener el ID de usuario
+            const decodedToken = parseJwt(token); // Implementa esta función según tu método de decodificación
+            const userId = decodedToken.id; // Extrae el ID de usuario del token
+
+            // Guarda el ID de usuario en localStorage (opcional, dependiendo de tu implementación)
+            localStorage.setItem('userId', userId);
+            console.log("usuario",userId);
             // Redirige a la página de Dashboard o Home
             navigate('/dashboard');
         } catch (error) {
@@ -32,6 +39,15 @@ const Login = () => {
 
     const handleRegister = () => {
         navigate('/register'); // Navega a la página de registro
+    };
+
+    // Función para decodificar el token JWT (ejemplo básico)
+    const parseJwt = (token) => {
+        try {
+            return JSON.parse(atob(token.split('.')[1]));
+        } catch (e) {
+            return null;
+        }
     };
 
     return (

@@ -1,0 +1,42 @@
+/* Estilos para EspecieDetail */
+
+.especie-detail {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .especie-detail h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .especie-detail p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .especie-detail h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  #myChart {
+    margin: 20px 0;
+  }
+  
+  .link-logout {
+    display: block;
+    margin-top: 20px;
+    text-align: right;
+    color: #007bff;
+  }
+  
+  .link-logout:hover {
+    text-decoration: underline;
+  }
+  

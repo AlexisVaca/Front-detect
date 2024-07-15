@@ -1,13 +1,10 @@
 /* Estilos específicos para la página de subida de archivos */
 .upload-page {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background: linear-gradient(to bottom right,#37a582b3,40%, #66d666b3); 
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  min-height: 100vh; /* Ajusta según necesites */
+  background: #f0f0f0;
 }
 
 .file-upload-container {
@@ -26,6 +23,8 @@
   text-align: center;
   cursor: pointer;
   transition: border-color 0.3s ease;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  margin: 0 auto; /* Centra horizontalmente */
 }
 
 .file-upload-area.dragging {
@@ -35,40 +34,34 @@
 
 .upload-buttons {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
+  justify-content: center; /* Centra horizontalmente los elementos */
+  gap: 10px; /* Espacio entre botones */
+  margin-top: 10px; /* Espacio superior entre contenedor y botones */
 }
 
-.upload-button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-top: 10px;
+.upload-button, .cancel-button {
+  flex: 1; /* Distribuye el espacio disponible igualmente entre los botones */
+  background-color: #4caf50; /* Color de fondo del botón Subir y Detectar */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Padding interior */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cursor tipo puntero */
+  border-radius: 4px; /* Borde redondeado */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
 }
 
-.upload-button:disabled {
-  background-color: #a5d6a7;
-  cursor: not-allowed;
+.upload-button:disabled, .cancel-button:disabled {
+  background-color: #a5d6a7; /* Color de fondo para botones deshabilitados */
+  cursor: not-allowed; /* Cursor no disponible */
 }
 
 .cancel-button {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-top: 10px;
+  background-color: #f44336; /* Color de fondo del botón Cancelar */
 }
 
-.cancel-button:disabled {
-  background-color: #ef9a9a;
-  cursor: not-allowed;
+.cancel-button:hover {
+  background-color: #ef5350; /* Color de fondo al pasar el cursor sobre Cancelar */
 }
 
 .file-upload-container {
@@ -122,8 +115,9 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #fff;
+  flex-basis: calc(33.33% - 20px); /* Ancho para 3 columnas con gap de 20px */
+  max-width: calc(33.33% - 20px);
 }
-
 .detection-image {
   max-width: 100%;
   height: auto;
@@ -163,4 +157,85 @@
 .detection-results-scrollable {
   max-height: 400px; /* Altura máxima para la lista de resultados */
   overflow-y: auto; /* Añadir barra de desplazamiento vertical cuando sea necesario */
+}
+
+.upload-form {
+  margin-top: 20px; /* Espacio superior entre la carga de archivos y el formulario */
+  text-align: center; /* Centra horizontalmente el contenido del formulario */
+}
+
+.upload-form h2 {
+  text-align: center;
+  
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-container {
+  margin-bottom: 15px; /* Espacio inferior entre contenedores */
+  width: 100%; /* Ancho completo */
+}
+
+.input-container label {
+  display: block; /* Mostrar como bloque para ocupar todo el ancho disponible */
+  margin-bottom: 5px; /* Espacio inferior entre etiqueta y campo de entrada */
+}
+
+.input-container input {
+  width: calc(100% - 20px); /* Ancho del campo de entrada menos el padding */
+  padding: 10px; /* Padding interior */
+  font-size: 16px; /* Tamaño de fuente */
+  border: 1px solid #cccccc; /* Borde gris */
+  border-radius: 5px; /* Borde redondeado */
+  box-sizing: border-box; /* Incluir padding y borde en el tamaño total */
+  margin-top: 5px; /* Espacio superior */
+}
+
+.full-width {
+  width: 100%; /* Ancho completo para el campo de entrada */
+}
+.input-container.inline {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+.input-container.inline label {
+  margin-right: 10px;
+}
+
+.number-input {
+  display: flex;
+  align-items: center;
+}
+
+.number-input button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.number-input button:hover {
+  background-color: #45a049;
+}
+
+.number-input input {
+  width: 100px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.number-input input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.6);
 }
