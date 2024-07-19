@@ -30,7 +30,7 @@ const Login = () => {
             localStorage.setItem('userId', userId);
             console.log("usuario",userId);
             // Redirige a la página de Dashboard o Home
-            navigate('/dashboard');
+            navigate('/home');
         } catch (error) {
             console.error('Error al hacer login:', error);
             setError('Credenciales inválidas. Por favor, inténtalo de nuevo.');
