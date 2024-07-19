@@ -26,16 +26,7 @@ const Welcome = () => {
             <li>Acceso a detalles específicos de cada especie</li>
           </ul>
         </section>
-        <section className="welcome-get-started">
-          <h2>Comienza Ahora</h2>
-          <p>
-            Para empezar, puedes crear una cuenta o iniciar sesión si ya tienes una.
-          </p>
-          <div className="welcome-buttons">
-            <Link to="/register" className="btn btn-primary">Crear Cuenta</Link>
-            <Link to="/" className="btn btn-secondary">Iniciar Sesión</Link>
-          </div>
-        </section>
+        
       </div>
     </div>
   );
