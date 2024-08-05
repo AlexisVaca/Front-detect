@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useState, useRef } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from '../api';
 import Chart from 'chart.js/auto';
 import ImageCarousel from '../components/carousel';
@@ -14,20 +14,14 @@ const EspecieDetail = () => {
   const chartRef = useRef(null);
   const chartInstanceRef = useRef(null);
 
-  useEffect(() => {
-    fetchEspecieData();
-    fetchImages();
-    fetchChartData();
-  }, [idEspecie]);
-
   const fetchEspecieData = useCallback(async () => {
     try {
       const response = await axios.get(`/api/especies/${idEspecie}`);
       setEspecie(response.data[0]);
     } catch (error) {
-      console.error('Error fetching species data:', error);
+      console.error('Error fetching species data:', error);      
     }
-  }, [idEspecie]);
+  },[idEspecie]);
 
   const fetchImages = useCallback(async () => {
     try {
@@ -38,20 +32,20 @@ const EspecieDetail = () => {
     }
   }, [idEspecie]);
 
-  const fetchChartData = async () => {
+  const fetchChartData = useCallback(async () => {
     try {
       const response = await axios.get(`/api/especies/${idEspecie}/chartdata`);
       setChartData(response.data);
     } catch (error) {
       console.error('Error fetching species chart data:', error);
     }
-  };
-
+  },[idEspecie]);
+  
   useEffect(() => {
     fetchEspecieData();
     fetchImages();
-
-  }, [fetchEspecieData, fetchImages]);
+    fetchChartData();
+  }, [fetchEspecieData, fetchImages, fetchChartData]);
 
   useEffect(() => {
     if (chartData.length > 0 && chartRef.current) {

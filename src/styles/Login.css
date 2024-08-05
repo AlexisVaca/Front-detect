@@ -1,79 +1,88 @@
 /* Estilos base para asegurar que la página de login ocupe toda la pantalla */
-html, body {
-    height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.login-container {
+.body{
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw; /* Asegura que ocupe todo el ancho de la pantalla */
-    background-image: url('https://scontent.fuio7-1.fna.fbcdn.net/v/t1.6435-9/40778379_2155568727849003_8978027145376825344_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGUjZrBw_9oTF71symL28t99u7BgS9ZlvL27sGBL1mW8k8Lx6LCwZG4HxfrOWy7ydRzxztC2AN2c3RpQo95H3Lc&_nc_ohc=2ZZVYDpko2wQ7kNvgGyVkEh&_nc_ht=scontent.fuio7-1.fna&oh=00_AYAXCzjKfl_2wvDQ32xZJvFIl92nXSEhisAOX4zgzZlRcA&oe=66AED552');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.content-container {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 90%; /* Ancho máximo */
-    max-width: 400px; /* Limitar el ancho máximo */
-    margin: 20px;
-}
-
-.welcome-banner {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.welcome-banner h1 {
-    font-size: 36px;
-    color: #333;
-}
-
-.welcome-banner p {
-    font-size: 16px;
-    color: #555;
-}
-
-.login-form {
-    display: flex;
     flex-direction: column;
-    width: 100%;
+    min-height: 100vh;
 }
 
-.login-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+.formulario{
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    display: flex;
+    flex-direction: row;
+}
+
+.formulario p{
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+
+.formulario span{
+    font-size: 12px;
 }
 
 .input-container {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     width: 100%;
+    position: relative;
 }
 
-.input-container input {
+.input-container__input {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #cccccc;
+    border: 2px solid #cccccc;
     border-radius: 5px;
-    box-sizing: border-box;
+    outline: none;
+    transition: border-color 250ms;
+    box-shadow: 0.3s;
 }
 
-.login-button{
+.input-container__input:focus{
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(92, 91, 235, 0.5);
+}
+
+.input-container__label {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transform: translate(10px, 10px);
+    transform-origin: left;
+    color: #636363;
+    transition: transform 200ms, color 0.3s;
+    pointer-events: none;
+}
+
+.input-container__input:focus + .input-container__label,
+.input-container__input:valid + .input-container__label{
+    transform: translate(0, -30px) scale(0.8);
+    color: #000;
+}
+
+
+.formulario .buttonL, .buttonLS{
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -84,21 +93,11 @@ html, body {
     cursor: pointer;
     margin-top: 10px;
 }
-.register-button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #008057b3;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
 
-.login-button:hover,
-.register-button:hover {
-    background-color: #0056b3;
+
+.formulario .buttonL:hover, .buttonLS:hover{
+    background-color: #03b300;
+    border-color: #fff;
 }
 
 .error-message {
@@ -107,13 +106,265 @@ html, body {
     margin-bottom: 10px;
 }
 
-/* Media Query para pantallas pequeñas */
-@media (max-width: 768px) {
-    .content-container {
-        width: 80%; /* Ajustar el ancho en pantallas pequeñas */
+.formulario .form-content form{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+
+.formulario input{
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.form-content{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+    
+}
+
+.sign-in{
+    left: 0%;
+    width: 50%;
+    z-index: 2;
+}
+
+.formulario.modo-registro .sign-in{
+    transform: translateX(100%);
+}
+
+
+
+.sign-up{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.formulario.modo-registro  .sign-up{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.toggle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+
+.formulario.modo-registro .toggle-container{
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.toggle{
+    background-color: #512da8;
+    height: 100%;
+    background-image: url('https://scontent.fuio7-1.fna.fbcdn.net/v/t1.6435-9/40778379_2155568727849003_8978027145376825344_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGUjZrBw_9oTF71symL28t99u7BgS9ZlvL27sGBL1mW8k8Lx6LCwZG4HxfrOWy7ydRzxztC2AN2c3RpQo95H3Lc&_nc_ohc=2ZZVYDpko2wQ7kNvgGyVkEh&_nc_ht=scontent.fuio7-1.fna&oh=00_AYAXCzjKfl_2wvDQ32xZJvFIl92nXSEhisAOX4zgzZlRcA&oe=66AED552');
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.formulario.modo-registro .toggle-container .toggle{
+    transform: translateX(50%);
+}
+
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left{
+    transform: translateX(-200%);
+}
+
+.formulario.modo-registro .toggle-left{
+    transform: translateX(0);
+}
+
+.toggle-right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.formulario.modo-registro .toggle-right{
+    transform: translateX(200%);
+}
+
+/*Registro*/
+@media (max-width: 580px) {
+    .formulario{
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+        position: relative;
+        overflow: hidden;
+        width: 768px;
+        max-width: 100%;
+        height: 700px;
+        max-height: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .formulario .form-content form{
+        height: 80%;
+    }
+    
+    .sign-in{
+        width: 100%;
+    }
+    
+    .formulario.modo-registro .sign-in{
+        transform: translateY(100%);
+    }
+    
+    .sign-up{
+        top: -100%;
+        width: 100%;
+    }
+    
+    .formulario.modo-registro  .sign-up{
+        transform: translateY(120%);
+    }
+    
+    .toggle-container{
+        top: 80%;
+        left: 0%;
+        width: 100%;
+        height: 50%;
+        border-radius: 80px 80px 0 0;
     }
 
-    .welcome-banner {
-        display: none; /* Oculta el mensaje de bienvenida en pantallas pequeñas */
+    .etiquetas{
+        display: none;
     }
+    
+    .formulario.modo-registro .toggle-container{
+        transform: translateY(-220%);
+        border-radius: 0 0 80px 80px;
+    }
+    
+
+    .toggle{
+        top: -100%;
+        left: 0;
+        height: 200%;
+        width: 100%;
+        transform: translateY(0);
+        }
+
+    .formulario.modo-registro .toggle-container .toggle{
+        transform: translateY(10%);
+    }
+    
+    .toggle-panel{
+        left: 0;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        transform: translateY(0);
+    }
+
+    .toggle-container:hover{
+        transform: translateY(-10%);
+    }
+
+    
+    .toggle-left{
+        transform: translateY(200%);
+    }
+    
+    .formulario.modo-registro .toggle-left{
+        transform: translateY(25%);
+    }
+    
+    .toggle-right{
+        bottom: 0;
+        transform: translateY(12%);
+    }
+    
+    .formulario.modo-registro .toggle-right{
+        transform: translateY(-200%);
+    }
+    .formulario .buttonLS{
+        width: 100%;
+        padding: 10px 30px;
+        font-size: 25px;
+
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    
+    
+    .formulario .buttonL:hover{
+        background-color: #03b300;
+        border-color: #fff;
+    }
+/**/
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
 }

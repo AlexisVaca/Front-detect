@@ -1,13 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 import Menu from '../components/menu';
-import '../styles/home.css'; // Asegúrate de crear un archivo de estilos para la pantalla de bienvenida
+import '../styles/home.css'; 
 
 const Welcome = () => {
   return (
     <div>
       <Menu />
       <div className="welcome-page">
+        <div className='video-container'>
+        
+        </div>
         <header className="welcome-header">
           <h1>Bienvenido a Reconocimiento de Especies</h1>
         </header>

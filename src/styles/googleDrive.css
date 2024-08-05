@@ -1,10 +1,63 @@
 /* Estilos específicos para la página de subida de archivos */
+.body{
+  background-color: #c9d6ff;
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: auto;
+}
+.pegote{
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #45a049;
+}
+
+.pagination button:disabled {
+  background-color: #ddd;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+
 .upload-page {
   display: flex;
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
   min-height: 100vh; /* Ajusta según necesites */
-  background: #f0f0f0;
+  background: #ffffff00;
 }
 
 .file-upload-container {
@@ -115,8 +168,8 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #fff;
-  flex-basis: calc(33.33% - 20px); /* Ancho para 3 columnas con gap de 20px */
-  max-width: calc(33.33% - 20px);
+  flex-basis: calc(50% - 20px); /* Ancho para 3 columnas con gap de 20px */
+  max-width: calc(50% - 20px);
 }
 .detection-image {
   max-width: 100%;
@@ -125,21 +178,116 @@
 }
 
 .species-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
   position: relative;
-  display: inline-block;
+  
+  
 }
 
 .species-image {
-  max-width: 200px;
-  max-height: 200px;
-  margin-bottom: 10px;
+  max-width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  
+}
+
+.species-container .image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease-in-out;
+}
+
+.species-container::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid white;
+  border-radius: inherit;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.species-container:hover img {
+  filter:  
+  grayscale(1)
+  brightness(0.4);
+}
+
+.species-container:hover::after {
+  opacity: 1;
+  inset: 10px;
+}
+
+.species-label {
+  background-color: rgba(255, 0, 0, 0.5); /* Adjust background color and opacity as needed */
+  color: white;
+  padding: 2px 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+}
+
+.content {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+}
+
+.content h2, 
+.content p {
+  opacity: 0;
+  transition: 0.4s 0.2s ease;
+}
+.content h2 {
+  margin-bottom: 12px;
+  scale: 0.7;
+  color: #d1d1d1;
+}
+.content p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #d1d1d1;
+  transform: translateY(50%);
+}
+
+.species-container:hover .content h2 {
+  scale: 1;
+  opacity: 1;
+}
+
+.species-container:hover .content p {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .bounding-box {
   position: absolute;
   border: 2px solid red;
-  box-sizing: border-box;
+  background: rgba(255, 0, 0, 0.3);
+  z-index: 1;
+  pointer-events: none;
 }
+.species-container:hover .bounding-box {
+  border: 2px solid rgba(255, 0, 0, 0.276);
+  background: rgba(255, 0, 0, 0.174);
+  z-index: 1;
+}
+
+
+ 
 
 .progress-container {
   margin-top: 20px;
@@ -238,4 +386,24 @@
   outline: none;
   border-color: #4caf50;
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.6);
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+ 
+  .content h2 {
+    margin-bottom: 12px;
+    scale: 0.7;
+    color: #d1d1d1;
+    font-size: 16px;
+
+  }
+  .content p {
+    font-size: 12px;
+    line-height: 1;
+  }
 }

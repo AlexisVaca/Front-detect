@@ -2,9 +2,26 @@
 
 .menu-container {
   background-color: #333;
-  padding: 10px 20px;
+  padding: 0px 20px;
   border-bottom: 2px solid #555;
+  position: relative;
+  top: 0;
+  margin: 0;
   z-index: 1000;
+}
+
+.checkbtn{
+  font-size: 30px;
+  color: #fff;
+  float: left;
+  line-height: 40px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check{
+  display: none;
 }
 
 
@@ -20,6 +37,16 @@
 .menu-item {
   position: relative;
   margin-right: 20px;
+  width: 150px;
+  height: 40px;
+  margin: 0;
+  text-align: center;
+  align-content: center;
+}
+
+.menu-item:hover{
+  background-color: #444;
+  
 }
 
 .menu-item.menu-item-right {
@@ -31,10 +58,16 @@
   color: #fff;
   font-size: 18px;
   transition: color 0.3s ease;
+  padding: 10px 0px;
+  display: block;
+  transition: background-color 0.3s ease;
+
 }
 
 .menu-link:hover {
+  
   color: #66ccff;
+  
 }
 
 /* Submenu estilos */
@@ -49,6 +82,7 @@
   border: 1px solid #555;
   max-height: 300px; /* Altura máxima del submenu */
   overflow-y: auto; /* Scroll vertical */
+  overflow-x: hidden;
   display: none;
   z-index: 1000;
 }
@@ -72,20 +106,40 @@
 
 .submenu-link:hover {
   background-color: #444;
+  transform: scale(1.1);
 }
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
-  .menu-list {
-    flex-direction: column;
+  .menu-container{
+    display: block;
+    padding: 10px 10px;
+    height: 50px;
   }
-
+  .checkbtn{
+    display: block;
+  }
+  .menu-list {
+    position: fixed;
+    width: 50%;
+    flex-direction: column;
+    background-color: #333;
+    top: 50px;
+    transition: all .5s;
+    left: -100%;
+  }
   .menu-item {
     margin-right: 0;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
   }
-
   .menu-item.menu-item-right {
     margin-left: 0;
+  }
+  .submenu-list{
+    top: 0;
+    left: 100%;
+  }
+  #check:checked ~ ul{
+    left:0;
   }
 }

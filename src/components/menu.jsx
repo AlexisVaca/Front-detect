@@ -4,6 +4,8 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import axios from '../api';
 import '../styles/menu.css'; // Importamos estilos CSS personalizados
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 const Menu = () => {
   const [especies, setEspecies] = useState([]);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
@@ -28,6 +30,10 @@ const Menu = () => {
 
   return (
     <nav className="menu-container">
+      <input type='checkbox' id='check'/>
+      <label for='check' className='checkbtn'>
+        <i className='bi bi-list'></i>
+      </label>
       <ul className="menu-list">
         <li className="menu-item">
           <Link to="/home" className="menu-link">

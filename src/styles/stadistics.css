@@ -1,4 +1,9 @@
 /* Statistics.css */
+.pegote{
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+}
 
 .stats-page {
     max-width: 800px;
@@ -16,6 +21,7 @@
   
   .chart-container {
     margin-bottom: 20px;
+    z-index: 500;
   }
   
   #myChart {

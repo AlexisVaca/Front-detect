@@ -1,4 +1,4 @@
-/* Estilos para la página de registro */
+/* Estilos para la página de registro
 .register-container {
   display: flex;
   justify-content: center;
@@ -8,7 +8,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #f0f0f0; /* Color de fondo */
+  background-color: #f0f0f0; // Color de fondo
 }
 
 .registration-form-container {
@@ -19,12 +19,12 @@
   width: 100%;
   max-width: 400px;
   text-align: center;
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Transiciones de transformación y opacidad */
-  transform: translateY(20px); /* Desplazamiento inicial */
+  transition: transform 0.3s ease, opacity 0.3s ease; // Transiciones de transformación y opacidad
+  transform: translateY(20px); // Desplazamiento inicial
 }
 
 .success-container {
-  background-color: #d4edda; /* Color de fondo para mensajes de éxito */
+  background-color: #d4edda; // Color de fondo para mensajes de éxito
   padding: 20px;
   border-radius: 10px;
   margin-top: 10px;
@@ -50,11 +50,11 @@
 }
 
 .form-group input {
-  width: 100%; /* Ancho completo del input */
+  width: 100%; // Ancho completo del input
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box; /* Incluir padding y border en el ancho total */
+  box-sizing: border-box; // Incluir padding y border en el ancho total
 }
 
 .error-message {
@@ -70,7 +70,7 @@
 
 .submit-button,
 .back-button {
-  background-color: #008000b3; /* Verde con 70% de opacidad */
+  background-color: #008000b3; // Verde con 70% de opacidad 
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -82,7 +82,7 @@
 
 .back-button {
   width: 100%;
-  background-color: #008057b3; /* Azul oscuro */
+  background-color: #008057b3; // Azul oscuro 
 }
 
 .submit-button:hover,
@@ -104,7 +104,7 @@
   box-sizing: border-box;
 }
 
-/* Mostrar la página de registro */
+// Mostrar la página de registro 
 .register-container.active {
   opacity: 1;
 }
@@ -112,3 +112,4 @@
 .registration-form-container.active {
   transform: translateY(0);
 }
+*/
