@@ -1,51 +1,86 @@
-/* welcome.css */
-
 .welcome-page {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .welcome-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-  }
-  
-  .welcome-description,
-  .welcome-features,
-  .welcome-get-started {
-    margin: 20px 0;
-  }
-  
-  .welcome-features ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .welcome-features li {
-    margin: 10px 0;
-    font-weight: bold;
-  }
-  
-  .welcome-buttons {
-    margin-top: 20px;
-  }
-  
-  .welcome-buttons .btn {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
-  }
-  
-  .welcome-buttons .btn-primary {
-    background-color: #007BFF;
-  }
-  
-  .welcome-buttons .btn-secondary {
-    background-color: #6c757d;
-  }
-  
-  
+  text-align: center;
+  padding: 20px;
+}
+
+.welcome-header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.welcome-description {
+  font-size: 18px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+/* Contenedor de las características */
+.welcome-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Estilo para cada tarjeta de característica */
+.feature-card {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 300px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Estilo del icono */
+.feature-card svg {
+  width: 40px;
+  height: 40px;
+  color: #4CAF50;
+  margin-right: 15px;
+}
+
+/* Texto dentro de la tarjeta */
+.feature-text {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Botones */
+.welcome-buttons {
+  margin-top: 20px;
+}
+
+.welcome-buttons .btn {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out;
+}
+
+.welcome-buttons .btn-primary {
+  background-color: #007BFF;
+}
+
+.welcome-buttons .btn-secondary {
+  background-color: #6c757d;
+}
+
+.welcome-buttons .btn:hover {
+  opacity: 0.8;
+}

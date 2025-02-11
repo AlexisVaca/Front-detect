@@ -1,5 +1,5 @@
 import React from 'react';
-import 'react-toastify/dist/ReactToastify.css';
+import { FaCamera, FaMapMarkerAlt, FaChartBar, FaInfoCircle } from 'react-icons/fa'; // Íconos
 import Menu from '../components/menu';
 import '../styles/home.css'; 
 
@@ -8,9 +8,6 @@ const Welcome = () => {
     <div>
       <Menu />
       <div className="welcome-page">
-        <div className='video-container'>
-        
-        </div>
         <header className="welcome-header">
           <h1>Bienvenido a Reconocimiento de Especies</h1>
         </header>
@@ -20,16 +17,26 @@ const Welcome = () => {
             utilizando imágenes. También puedes visualizar estadísticas detalladas y mapas de avistamientos.
           </p>
         </section>
+
+        {/* Contenedor de características en tarjetas */}
         <section className="welcome-features">
-          <h2>Características Principales</h2>
-          <ul>
-            <li>Identificación de especies a través de imágenes</li>
-            <li>Registro de avistamientos con ubicación geográfica</li>
-            <li>Visualización de estadísticas y gráficos</li>
-            <li>Acceso a detalles específicos de cada especie</li>
-          </ul>
+          <div className="feature-card">
+            <FaCamera />
+            <span className="feature-text">Identificación de especies a través de imágenes</span>
+          </div>
+          <div className="feature-card">
+            <FaMapMarkerAlt />
+            <span className="feature-text">Registro de avistamientos con ubicación geográfica</span>
+          </div>
+          <div className="feature-card">
+            <FaChartBar />
+            <span className="feature-text">Visualización de estadísticas y gráficos</span>
+          </div>
+          <div className="feature-card">
+            <FaInfoCircle />
+            <span className="feature-text">Acceso a detalles específicos de cada especie</span>
+          </div>
         </section>
-        
       </div>
     </div>
   );
